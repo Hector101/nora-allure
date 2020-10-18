@@ -9,32 +9,44 @@ import NavItem from './NavItem'
 import { debounce } from 'src/utils'
 
 const Hamburger = (
-  props: BoxProps & { display: string[]; onClick: () => void }
+  { bgColor, ...rest }: BoxProps & { display: string[]; onClick: () => void; bgColor: string; }
 ) => (
-  <Box as="button" aria-label="Navigation Menu" {...props}>
-    <span></span>
-    <span></span>
-    <span></span>
+  <Box
+    as="button"
+    aria-label="Navigation Menu"
+    backgroundColor="transparent"
+    border="none"
+    width="16px"
+    marginRight="15px"
+    position="relative"
+    bottom="1px"
+    cursor="pointer"
+    p={0}
+    {...rest}
+  >
+    <Text
+      as="span"
+      height="1px"
+      display="block"
+      marginBottom="4px"
+      bgColor={bgColor}
+    />
+    <Text
+      as="span"
+      height="1px"
+      display="block"
+      marginBottom="4px"
+      bgColor={bgColor}
+    />
+    <Text
+      as="span"
+      height="1px"
+      display="block"
+      marginBottom="4px"
+      bgColor={bgColor}
+    />
   </Box>
 )
-
-const StyledHamburger = styled(Hamburger)`
-  background-color: transparent;
-  border: none;
-  width: 16px;
-  margin-right: 15px;
-  position: relative;
-  bottom: 1px;
-  cursor: pointer;
-  padding: 0;
-
-  > span {
-    height: 1px;
-    display: block;
-    background-color: #111211;
-    margin-bottom: 4px;
-  }
-`
 
 export interface TopNavProps {
   theme?: 'light' | 'dark'
@@ -49,26 +61,27 @@ const MainTopNav: React.FC<TopNavProps> = ({
 }) => {
   const [leftNavOpen, setLeftNavOpen] = useState(false)
   const [selectedNavTab, setSelectedNavTab] = useState<NavTab>(NavTab.SHOP)
-  const [isSticky, setSticky] = useState(true)
-  let unsubscribeFromOnCartHide = () => {}
+  const [isSticky, setSticky] = useState(false)
 
+  
   useEffect(() => {
     const debouncedHandleScroll = debounce(() => {
-        setSticky(window.scrollY >= 70)
+      setSticky(window.scrollY >= 70)
     }, 10)
-
+    
     window.addEventListener('scroll', debouncedHandleScroll)
-
+    
     return () => {
       window.removeEventListener('scroll', () => debouncedHandleScroll)
-      unsubscribeFromOnCartHide
     }
   }, [])
-
+  
   const openLeftNav = (navTab: NavTab) => {
     setSelectedNavTab(navTab)
     setLeftNavOpen(true)
   }
+
+  const boxShadow = hasBoxShadow || isSticky ? 'topNavShadow' : 'none'
 
   return (
     <>
@@ -78,7 +91,7 @@ const MainTopNav: React.FC<TopNavProps> = ({
         position={isSticky ? 'fixed' : 'absolute'}
         backgroundColor={isSticky ? 'whiteSands' : 'initial'}
         zIndex={isSticky ? 'sticky' : 'header'}
-        boxShadow={hasBoxShadow || isSticky ? 'topNavShadow' : 'none'}
+        boxShadow={['topNavShadow', boxShadow, boxShadow]}
       >
         <Flex
           direction="row"
@@ -88,14 +101,15 @@ const MainTopNav: React.FC<TopNavProps> = ({
           px={hasBorder ? [5, 5, 0] : [5, 5, 10]}
           mx={hasBorder ? [0, 0, 10] : 0}
           pt={2}
-          color={theme === 'light' ? 'black' : 'offwhite'}
+          color={theme === 'light' && !isSticky ? 'offwhite' : 'black'}
           borderBottom={hasBorder && !isSticky ? '1px' : 'none'}
-          borderColor={theme === 'light' ? 'topNavDarkBorder' : 'white'}
+          borderColor={theme === 'light' && !isSticky ? 'offwhite' : 'topNavDarkBorder'}
         >
           <Flex align="center" justify="center">
-            <StyledHamburger
+            <Hamburger
               display={['block', 'block', 'none']}
               onClick={() => openLeftNav(NavTab.SHOP)}
+              bgColor={!isSticky ? 'offwhite' : 'black'}
             />
 
             <Link href="/">
@@ -110,7 +124,10 @@ const MainTopNav: React.FC<TopNavProps> = ({
                 <Box
                   as="img"
                   alt="logo"
-                  src="https://res.cloudinary.com/dqssxfxct/image/upload/v1602934281/nora_allure_logo_tpvgfl.png"
+                  src={isSticky
+                      ? 'https://res.cloudinary.com/dqssxfxct/image/upload/v1602934281/nora_allure_logo_tpvgfl.png'
+                      : 'https://res.cloudinary.com/dqssxfxct/image/upload/v1603030006/logo_light_fp4pio.png'
+                  }
                   height="100%"
                 />
               </Flex>

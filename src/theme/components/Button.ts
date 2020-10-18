@@ -38,7 +38,7 @@ export const Button = {
       bg: 'sage',
       color: 'whiteSands',
       _hover: {
-        bg: 'nightGreen',
+        bg: 'primary',
       },
       _disabled: {
         bg: 'disabled',
@@ -81,10 +81,10 @@ export const Button = {
       width: ['100%', null, 'auto'],
       minWidth: [null, null, '190px'],
       bg: 'transparent',
-      border: 'nightGreen',
+      border: 'primary',
       color: 'buttonText',
       _hover: {
-        bg: 'nightGreen',
+        bg: 'primary',
         color: 'whiteSands',
       },
       _disabled: {
@@ -98,10 +98,10 @@ export const Button = {
       width: ['100%', null, 'auto'],
       minWidth: ['100%', null, '190px'],
       bg: 'transparent',
-      border: 'nightGreen',
+      border: 'primary',
       color: 'buttonText',
       _hover: {
-        bg: 'nightGreen',
+        bg: 'primary',
         color: 'whiteSands',
       },
       _disabled: {

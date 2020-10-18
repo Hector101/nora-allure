@@ -71,6 +71,7 @@ const colors = {
   morning: '#9eacae',
   showers: '#cee2ea',
   sage: '#6e7b70',
+  seastone: '#cdd1ce',
 
   // form colors
   formError: '#dc3545',
