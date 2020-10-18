@@ -49,10 +49,10 @@ export const Button = {
     primary: {
       width: ['100%', null, 'auto'],
       minWidth: [null, null, '190px'],
-      bg: 'moss',
-      color: 'whiteSands',
+      bg: 'primary',
+      color: 'offwhite',
       _hover: {
-        bg: 'nightGreen',
+        bg: 'primaryLight',
       },
       _disabled: {
         bg: 'disabled',
@@ -135,7 +135,6 @@ export const Button = {
       minHeight: 'auto',
       width: 'auto',
       height: 'auto',
-      // width: ['auto', 'auto', 'auto'],
       fontWeight: 'inherit',
       fontFamily: 'inherit',
       pt: 0,

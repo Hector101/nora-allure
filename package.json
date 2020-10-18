@@ -7,20 +7,20 @@
     "start": "next start"
   },
   "dependencies": {
-    "@chakra-ui/core": "^0.8.0",
-    "@chakra-ui/icons": "^1.0.0-next.3",
-    "@chakra-ui/system": "^1.0.0-next.3",
-    "@emotion/core": "^10.0.35",
-    "@emotion/styled": "^10.0.27",
-    "emotion-theming": "^10.0.27",
-    "next": "latest",
+    "@chakra-ui/core": "1.0.0-rc.2",
+    "@emotion/core": "10.0.28",
+    "@emotion/styled": "10.0.27",
+    "emotion-theming": "10.0.27",
+    "next": "^9.5.5",
     "react": "^16.13.1",
-    "react-dom": "^16.13.1"
+    "react-dom": "^16.13.1",
+    "react-transition-group": "1.x"
   },
   "devDependencies": {
     "@types/node": "^14.6.0",
     "@types/react": "^16.9.46",
     "@types/react-dom": "^16.9.8",
+    "@types/react-transition-group": "1.x",
     "typescript": "4.0.2"
   },
   "license": "MIT"

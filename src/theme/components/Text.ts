@@ -22,10 +22,7 @@ const sizes = {
   },
   xs: {
     fontSize: ['.6875rem', null, '.6875rem'],
-    // fontWeight: 'bold',
     lineHeight: ['1.4', null, '1.5'],
-    // letterSpacing: '.1rem',
-    // textTransform: 'uppercase',
   },
 }
 

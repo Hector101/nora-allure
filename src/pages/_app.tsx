@@ -1,15 +1,15 @@
-import { AppProps } from 'next/app';
-import { ThemeProvider, CSSReset } from '@chakra-ui/core';
+import { AppProps } from 'next/app'
+import { ChakraProvider, CSSReset } from '@chakra-ui/core'
 
 import { theme } from '../theme';
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <ThemeProvider theme={theme}>
+    <ChakraProvider theme={theme}>
       <CSSReset />
       <Component {...pageProps} />
-    </ThemeProvider>
+    </ChakraProvider>
   )
 }
 
-export default MyApp;
+export default MyApp

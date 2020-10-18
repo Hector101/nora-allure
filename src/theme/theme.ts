@@ -1,6 +1,5 @@
-import { theme as chakraTheme } from '@chakra-ui/core';
-
-import { components } from './components';
+import { components } from './components'
+import typography from './typography'
 
 const space = {
   px: '1px',
@@ -22,34 +21,56 @@ const space = {
   '48': '12rem',
   '56': '14rem',
   '64': '16rem',
-};
+}
+
+const sizes = {
+  boxed: '1300px',
+
+  heightXl: '57px',
+  heightXlMobile: '50px',
+
+  heightLg: '50px',
+  heightLgMobile: '38px',
+
+  heightMd: '42px',
+  heightMdMobile: '32px',
+
+  heightSm: '32px',
+  heightSmMobile: '24px',
+}
+
+const fontWeights = {
+  normal: '400',
+  bold: '600',
+}
+
+const fontSizes = {
+  lg: ['1', null, '1.25rem'],
+  md: ['.8125rem', null, '1.0rem'],
+  sm: ['.6875rem', null, '.8125rem'],
+  xs: ['.6875rem', null, '.6875rem'],
+}
 
 const colors = {
-  ...chakraTheme.colors,
   transparent: 'transparent',
   current: 'currentColor',
   black: '#000',
   white: '#fff',
   disabled: '#E0E2DF',
+  primary: '#173b99',
+  primaryLight: '#214dc7',
   secondary: '#696969',
   // brand specific
-  textPrimary: '#1E2D2B',
+  textPrimary: '#232323',
   textSecondary: '#A8A8A8',
   drawerText: '#0B0C0D',
   buttonText: '#0A0E0D',
-  nightGreen: '#2b2e2b',
-  moss: '#4b5548',
-  sage: '#6e7b70',
-  seastone: '#cdd1ce',
-  seastone2: '#e0e2e0',
-  foam: '#e2e6e3',
   charcoal: '#000000',
   offwhite: '#f5f5f4',
-  offwhite2: '#f2f2ef',
-  offwhite3: '#f7f7f7',
   whiteSands: '#fcfcf9',
   morning: '#9eacae',
   showers: '#cee2ea',
+  sage: '#6e7b70',
 
   // form colors
   formError: '#dc3545',
@@ -73,7 +94,8 @@ const colors = {
   lightGray: '#E5E5E5',
   topNavDarkBorder: '#292929',
   greySelectBorder: '#ACAFAD',
-};
+  detailsText: '#525F53',
+}
 
 const shadows = {
   sm: '0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06)',
@@ -88,9 +110,9 @@ const shadows = {
   addressBlockShadow:
     '1px 0 1px rgba(0, 0, 0, 0.2), -1px 0 1px rgba(0, 0, 0, 0.19)',
   none: 'none',
-};
+}
 
-const breakpoints = ['40em', '52em', '64em'];
+const breakpoints = ['768px', '992px', '1200px', '1440px']
 
 const zIndices = {
   hide: -1,
@@ -107,7 +129,7 @@ const zIndices = {
   skipLink: 1600,
   toast: 1700,
   tooltip: 1800,
-};
+}
 
 const radii = {
   none: '0',
@@ -116,7 +138,7 @@ const radii = {
   lg: '0.5rem',
   round: '50%',
   full: '9999px',
-};
+}
 
 const opacity = {
   '0': '0',
@@ -125,7 +147,7 @@ const opacity = {
   '60%': '0.6',
   '80%': '0.8',
   '100%': '1',
-};
+}
 
 const borders = {
   none: 0,
@@ -134,130 +156,71 @@ const borders = {
   '4px': '4px solid',
 
   disabled: `1px solid ${colors.disabled}`,
-  nightGreen: `1px solid ${colors.nightGreen}`,
+  primary: `1px solid ${colors.primary}`,
   whiteSands: `1px solid ${colors.whiteSands}`,
-  seastone: `1px solid ${colors.seastone}`,
-  moss: `1px solid ${colors.moss}`,
   morning: `1px solid ${colors.morning}`,
-};
+}
 
 const durations = {
   instant: '0s',
   quick: '0.2s',
   default: '0.4s',
   slow: '0.6s',
-};
+  verySlow: '0.9s',
+}
 
 const easings = {
   default: 'ease-in-out',
-};
+}
+
+const transitions = {
+  allEase: 'all ease 500ms',
+  cspEase: 'opacity ease 500ms'
+}
 
 const globalStyles = {
   color: `rgb(30, 45, 43)`,
   fontFamily: 'body',
-  // display: 'none',
   'a:hover': {
     cursor: 'pointer',
   },
-  '*': `@font-face {
-    font-family: "FF Bau Regular";
-    src: url("/fonts/karla.woff2") format("woff2");
+  '*': `
+  @font-face {
+    font-family: 'Abril Fatface';
+    src: url("https://fonts.googleapis.com/css?family=Abril+Fatface:300,700");
+    font-weight: 700;
   }
 
   @font-face {
-    font-family: freight-display-pro;
-    src: url("https://use.typekit.net/af/f15774/0000000000000000000132cf/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3");
-    font-display: swap;
-    font-weight: 400;
+    font-family: 'Work Sans';
+    src: url("https://fonts.googleapis.com/css?family=Work+Sans:300,700");
+    font-weight: 300;
   }
-  @font-face {
-    font-family: 'FF Bau Regular';
-    src: url("/fonts/karla.woff2")  format("woff2");
-  }
-
-  @font-face {
-    font-family: 'FF Bau Medium';
-    src: url("https://cdn.shopify.com/s/files/1/0044/1237/5107/t/1/assets/3A0D89_0_0.woff2")  format("woff2");
-  }
-
-  /* latin-ext */
-  @font-face {
-    font-family: 'Karla';
-    font-style: normal;
-    font-weight: 400;
-    src: local('Karla'), local('Karla-Regular'), url(https://fonts.gstatic.com/s/karla/v7/qkBbXvYC6trAT7RbLtyU5rZPoAU.woff2) format('woff2');
-    unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
-  }
-  /* latin */
-  @font-face {
-    font-family: 'Karla';
-    font-style: normal;
-    font-weight: 400;
-    src: local('Karla'), local('Karla-Regular'), url(https://fonts.gstatic.com/s/karla/v7/qkBbXvYC6trAT7RVLtyU5rZP.woff2) format('woff2');
-    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-  }
-  /* cyrillic-ext */
-  @font-face {
-    font-family: 'Montserrat';
-    font-style: normal;
-    font-weight: 400;
-    src: local('Montserrat Regular'), local('Montserrat-Regular'), url(https://fonts.gstatic.com/s/montserrat/v13/JTUSjIg1_i6t8kCHKm459WRhyyTh89ZNpQ.woff2) format('woff2');
-    unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
-  }
-  /* cyrillic */
-  @font-face {
-    font-family: 'Montserrat';
-    font-style: normal;
-    font-weight: 400;
-    src: local('Montserrat Regular'), local('Montserrat-Regular'), url(https://fonts.gstatic.com/s/montserrat/v13/JTUSjIg1_i6t8kCHKm459W1hyyTh89ZNpQ.woff2) format('woff2');
-    unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
-  }
-  /* vietnamese */
-  @font-face {
-    font-family: 'Montserrat';
-    font-style: normal;
-    font-weight: 400;
-    src: local('Montserrat Regular'), local('Montserrat-Regular'), url(https://fonts.gstatic.com/s/montserrat/v13/JTUSjIg1_i6t8kCHKm459WZhyyTh89ZNpQ.woff2) format('woff2');
-    unicode-range: U+0102-0103, U+0110-0111, U+1EA0-1EF9, U+20AB;
-  }
-  /* latin-ext */
-  @font-face {
-    font-family: 'Montserrat';
-    font-style: normal;
-    font-weight: 400;
-    src: local('Montserrat Regular'), local('Montserrat-Regular'), url(https://fonts.gstatic.com/s/montserrat/v13/JTUSjIg1_i6t8kCHKm459WdhyyTh89ZNpQ.woff2) format('woff2');
-    unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
-  }
-  /* latin */
-  @font-face {
-    font-family: 'Montserrat';
-    font-style: normal;
-    font-weight: 400;
-    src: local('Montserrat Regular'), local('Montserrat-Regular'), url(https://fonts.gstatic.com/s/montserrat/v13/JTUSjIg1_i6t8kCHKm459WlhyyTh89Y.woff2) format('woff2');
-    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-  }
-
   `,
-};
+}
 
-const theme = {
-  ...chakraTheme,
-  colors,
+const customTheme = {
+  styles: {
+    global: globalStyles,
+  },
   breakpoints,
   zIndices,
   radii,
   opacity,
   borders,
+  colors,
   durations,
   easings,
+  ...typography,
+  sizes,
   shadows,
   space,
+  fontWeights,
+  fontSizes,
   components,
-  styles: {
-    global: globalStyles,
-  },
+  transitions,
 }
 
-export type CustomTheme = typeof theme;
+export type CustomTheme = typeof customTheme
 
-export default theme;
+export default customTheme
