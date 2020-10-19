@@ -1,7 +1,6 @@
 import { Box, BoxProps, Flex, Text, Link, Button } from '@chakra-ui/core'
-import styled from '@emotion/styled'
-import { useRouter } from 'next/router'
-import React, { useState, useContext, useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
+import { v4 as uuid } from 'uuid'
 
 import SideNav from 'src/modules/shared/components/SideNav/SideNav'
 import { NavTab } from 'src/modules/shared/types'
@@ -24,27 +23,16 @@ const Hamburger = (
     p={0}
     {...rest}
   >
-    <Text
-      as="span"
-      height="1px"
-      display="block"
-      marginBottom="4px"
-      bgColor={bgColor}
-    />
-    <Text
-      as="span"
-      height="1px"
-      display="block"
-      marginBottom="4px"
-      bgColor={bgColor}
-    />
-    <Text
-      as="span"
-      height="1px"
-      display="block"
-      marginBottom="4px"
-      bgColor={bgColor}
-    />
+    {[...Array(3)].map(() => (
+      <Text
+        key={uuid()}
+        as="span"
+        height="1px"
+        display="block"
+        marginBottom="4px"
+        bgColor={bgColor}
+      />
+    ))}
   </Box>
 )
 

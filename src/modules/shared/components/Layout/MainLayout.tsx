@@ -26,7 +26,7 @@ const MainLayout: React.FC<MainLayoutProps> = ({
           flexGrow={1}
           flexShrink={0}
           css={{
-            '> *:first-child': {
+            '> *:first-of-type': {
               // This is the height of the abs positioned topNav. Should it be in theme?
               paddingTop: '64px',
             },

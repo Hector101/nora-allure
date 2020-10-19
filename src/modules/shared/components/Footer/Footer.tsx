@@ -17,7 +17,7 @@ const LightFooter = () => {
           align="center"
         >
           <Text size="md">
-              © 2020
+              © 2020 Nora allure Fashion
           </Text>
         </Flex>
       </Box>
