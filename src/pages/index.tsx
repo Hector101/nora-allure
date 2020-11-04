@@ -1,5 +1,4 @@
 import React from 'react'
-import { Heading } from '@chakra-ui/core'
 
 import withLayout from 'src/modules/shared/hoc/withLayout'
 import PageHeader from 'src/modules/shared/components/PageHeader'
