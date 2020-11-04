@@ -1,4 +1,4 @@
-import { Flex, Text, Heading, BoxProps, Button } from '@chakra-ui/core'
+import { Flex, Text, Heading, BoxProps, Button, Link } from '@chakra-ui/core'
 import React from 'react'
 
 const HeroDescription: React.FC<BoxProps> = ({ ...rest }) => {
@@ -18,24 +18,38 @@ const HeroDescription: React.FC<BoxProps> = ({ ...rest }) => {
         lineHeight="3.18rem"
         mb={[2, 4, 4]}
       >
-        Nora allure Fashion Store
+        Nora allure fashion store
       </Heading>
       <Text
-        size="md"
+        as="h2"
+        fontSize="24px"
+        mb={2}
       >
-        We provide the outfits that you love, Clothes that will make you smile. So be Stylish, be our customer
+        People will stare, Make it worth their while.
       </Text>
-      <Button
-        variant="outline"
+      <Text
         size="md"
-        width={['100%', '50%', '50%']}
         color="offwhite"
-        mt={[4, 8, 8]}
-        borderWidth="3px"
-        py={[2, 4, 6]}
       >
-        ORDER NOW
-      </Button>
+        So let us provide you outfits that suits your body type, Clothes that will make you smile. So be Stylish, be our customer.
+      </Text>
+      <Link
+        target="_blank"
+        rel=" noopener noreferrer"
+        href="https://wa.me/2349053166712"
+      >
+        <Button
+          variant="outline"
+          size="md"
+          width={['100%', '50%', '50%']}
+          color="offwhite"
+          mt={[4, 8, 8]}
+          borderWidth="3px"
+          py={[2, 4, 6]}
+        >
+          ORDER NOW
+        </Button>
+      </Link>
     </Flex>
   )
 }

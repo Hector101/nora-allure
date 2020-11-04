@@ -6,6 +6,8 @@ import SideNav from 'src/modules/shared/components/SideNav/SideNav'
 import { NavTab } from 'src/modules/shared/types'
 import NavItem from './NavItem'
 import { debounce } from 'src/utils'
+import { productsRef, connectWithtUsRef } from 'src/utils/refs'
+import { scrollTo } from 'src/utils/scrollTo'
 
 const Hamburger = (
   { bgColor, ...rest }: BoxProps & { display: string[]; onClick: () => void; bgColor: string; }
@@ -69,6 +71,14 @@ const MainTopNav: React.FC<TopNavProps> = ({
     setLeftNavOpen(true)
   }
 
+  const gotoProductSection = () => {
+    scrollTo(productsRef)
+  }
+
+  const gotoContactUsSection = () => {
+    scrollTo(connectWithtUsRef)
+  }
+
   const boxShadow = hasBoxShadow || isSticky ? 'topNavShadow' : 'none'
 
   return (
@@ -124,16 +134,26 @@ const MainTopNav: React.FC<TopNavProps> = ({
           <Flex align="center" mt={-1}>
             <NavItem
               display={['none', 'none', 'block']}
+              onClick={gotoProductSection}
             >
               Products
             </NavItem>
 
             <NavItem
               display={['none', 'none', 'block']}
+              onClick={gotoContactUsSection}
             >
-              Help
+              Connect with us
             </NavItem>
-            <Button sizes={['sm', 'md', 'md']}>Order Now</Button>
+            <Link
+              target="_blank"
+              rel=" noopener noreferrer"
+              href="https://wa.me/2349053166712"
+            >
+              <Button sizes={['sm', 'md', 'md']}>
+                Order Now
+              </Button>
+            </Link>
           </Flex>
         </Flex>
         <SideNav

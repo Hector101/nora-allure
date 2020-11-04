@@ -60,7 +60,6 @@ const colors = {
   primary: '#173b99',
   primaryLight: '#214dc7',
   secondary: '#696969',
-  // brand specific
   textPrimary: '#232323',
   textSecondary: '#A8A8A8',
   drawerText: '#0B0C0D',
@@ -72,6 +71,11 @@ const colors = {
   showers: '#cee2ea',
   sage: '#6e7b70',
   seastone: '#cdd1ce',
+  foam: '#e2e6e3',
+  foam2: '#e9ebe7',
+  lightFoam: '#ECECEC',
+  offwhite2: '#f2f2ef',
+  offwhite3: '#f7f7f7',
 
   // form colors
   formError: '#dc3545',

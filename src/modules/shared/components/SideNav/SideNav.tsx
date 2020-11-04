@@ -1,15 +1,17 @@
 import {
   Flex,
   Heading,
-} from "@chakra-ui/core"
-import { keyframes } from "@emotion/core"
-import React, { FC, ReactNode } from "react"
+} from '@chakra-ui/core'
+import { keyframes } from '@emotion/core'
+import React, { FC, ReactNode } from 'react'
 
-import Drawer from "src/modules/shared/components/Drawer/Drawer"
+import Drawer from 'src/modules/shared/components/Drawer/Drawer'
 import {
   ListNavLink,
-} from "src/modules/shared/components/SideNav/SideNavItem"
-import { Anchor, NavTab } from "src/modules/shared/types"
+} from 'src/modules/shared/components/SideNav/SideNavItem'
+import { Anchor, NavTab } from 'src/modules/shared/types'
+import { productsRef, connectWithtUsRef } from 'src/utils/refs'
+import { scrollTo } from 'src/utils/scrollTo'
 
 const bounce = keyframes`
   from {
@@ -31,16 +33,34 @@ const SideNav: FC<SideNavProps> = ({
   setLeftNavTab,
   ...drawerProps
 }) => {
+  const gotoProductSection = () => {
+    scrollTo(productsRef)
+    drawerProps.setIsOpen(false)
+  }
+
+  const gotoContactUsSection = () => {
+    scrollTo(connectWithtUsRef)
+    drawerProps.setIsOpen(false)
+  }
+
   return (
     <Drawer {...drawerProps} desktopWidth={474}>
       {(push) => (
         <Flex justify="flex-start" pt={12} px={8} direction="column" flex={1} spacing={4}>
-          <ListNavLink as={Heading} size="xs">
-              Products
-            </ListNavLink>
-            <ListNavLink as={Heading} size="xs">
-              Help
-            </ListNavLink>
+          <ListNavLink
+            as={Heading}
+            size="xs"
+            onClick={gotoProductSection}
+          >
+            Products
+          </ListNavLink>
+          <ListNavLink
+            as={Heading}
+            size="xs"
+            onClick={gotoContactUsSection}
+          >
+            Connect with us
+          </ListNavLink>
         </Flex>
       )}
     </Drawer>

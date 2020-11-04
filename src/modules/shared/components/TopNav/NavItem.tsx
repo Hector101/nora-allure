@@ -8,7 +8,7 @@ type NavItemProps = LinkProps & {
   mr?: number
 }
 
-const NavItem: React.FC<NavItemProps> = (props) => {
+const NavItem: React.FC<NavItemProps> = ({onClick,  ...rest}) => {
   return (
     <Link
       as="a"
@@ -18,10 +18,8 @@ const NavItem: React.FC<NavItemProps> = (props) => {
       py={1}
       px={4}
       transition="color .3s ease-in-out"
-      _hover={{
-        color: '#3d5b57',
-      }}
-      {...props}
+      onClick={onClick}
+      {...rest}
     />
   )
 }

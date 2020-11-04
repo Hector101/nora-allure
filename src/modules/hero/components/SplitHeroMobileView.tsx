@@ -13,7 +13,7 @@ const SplitHeroMobileView: FC<BoxProps> = ({ display }) => {
         backgroundRepeat="no-repeat"
         backgroundPosition="bottom"
         bgSize="cover"
-        minH="370px"
+        minH="450px"
         pt="40%"
         position="relative"
         display={display}
