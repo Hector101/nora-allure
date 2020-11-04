@@ -6,7 +6,6 @@ The presentation landing page for Nora Allure
 ## Tools Used
 - Next.js
 - TypeScript
-- MobX
 
 ## Requirements
 The following should be installed in your machine
