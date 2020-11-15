@@ -8,6 +8,8 @@ const ProductCard: React.FC<Product> = ({
   image,
   desc,
 }) => {
+  const encodedMessage = encodeURIComponent(`Hello Nora Allure, \n\n I'm interested in purchasing this product "${title}". \n  Image: ${image}`)
+
   return (
     <Flex
       position="relative"
@@ -37,7 +39,7 @@ const ProductCard: React.FC<Product> = ({
       <Link
         target="_blank"
         rel=" noopener noreferrer"
-        href="https://wa.me/2349053166712"
+        href={`https://wa.me/2349053166712?text=${encodedMessage}`}
       >
         <Button
           width="100%"
@@ -46,7 +48,7 @@ const ProductCard: React.FC<Product> = ({
           px={2}
           py={4}
         >
-          Order Now
+          Buy Now
         </Button>
       </Link>
     </Flex>

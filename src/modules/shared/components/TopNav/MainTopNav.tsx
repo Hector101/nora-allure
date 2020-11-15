@@ -134,26 +134,13 @@ const MainTopNav: React.FC<TopNavProps> = ({
           <Flex align="center" mt={-1}>
             <NavItem
               display={['none', 'none', 'block']}
-              onClick={gotoProductSection}
-            >
-              Products
-            </NavItem>
-
-            <NavItem
-              display={['none', 'none', 'block']}
               onClick={gotoContactUsSection}
             >
-              Connect with us
+              Connect With Us
             </NavItem>
-            <Link
-              target="_blank"
-              rel=" noopener noreferrer"
-              href="https://wa.me/2349053166712"
-            >
-              <Button sizes={['sm', 'md', 'md']}>
-                Order Now
-              </Button>
-            </Link>
+            <Button onClick={gotoProductSection} sizes={['sm', 'md', 'md']}>
+              Order Now
+            </Button>
           </Flex>
         </Flex>
         <SideNav

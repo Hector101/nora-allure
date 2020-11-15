@@ -1,7 +1,13 @@
 import { Flex, Text, Heading, BoxProps, Button, Link } from '@chakra-ui/core'
 import React from 'react'
+import { productsRef, connectWithtUsRef } from 'src/utils/refs'
+import { scrollTo } from 'src/utils/scrollTo'
 
 const HeroDescription: React.FC<BoxProps> = ({ ...rest }) => {
+  const gotoProductSection = () => {
+    scrollTo(productsRef)
+  }
+
   return (
     <Flex
       direction="column"
@@ -33,23 +39,18 @@ const HeroDescription: React.FC<BoxProps> = ({ ...rest }) => {
       >
         So let us provide you outfits that suits your body type, Clothes that will make you smile. So be Stylish, be our customer.
       </Text>
-      <Link
-        target="_blank"
-        rel=" noopener noreferrer"
-        href="https://wa.me/2349053166712"
+      <Button
+        variant="outline"
+        size="md"
+        width={['100%', '50%', '50%']}
+        color="offwhite"
+        mt={[4, 8, 8]}
+        borderWidth="3px"
+        py={[2, 4, 6]}
+        onClick={gotoProductSection}
       >
-        <Button
-          variant="outline"
-          size="md"
-          width={['100%', '50%', '50%']}
-          color="offwhite"
-          mt={[4, 8, 8]}
-          borderWidth="3px"
-          py={[2, 4, 6]}
-        >
-          ORDER NOW
-        </Button>
-      </Link>
+        ORDER NOW
+      </Button>
     </Flex>
   )
 }

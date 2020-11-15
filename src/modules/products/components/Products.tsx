@@ -21,7 +21,7 @@ const Products = () => {
         fontSize="30px"
         mb={8}
       >
-        Other Available Products
+        Available Products
       </Heading>
       <Flex
         direction={['column', 'row']}
@@ -31,7 +31,7 @@ const Products = () => {
         wrap="wrap"
       >
         {products.map((product) => (
-          <ProductCard {...product} />
+          <ProductCard key={product.title} {...product} />
         ))}
       </Flex>
     </Box>
