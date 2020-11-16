@@ -1,4 +1,4 @@
-import { Flex, Box, Heading } from '@chakra-ui/core'
+import { Flex, Box, Heading , HStack} from '@chakra-ui/core'
 import React from 'react'
 
 import { products } from 'src/modules/products/constants'
@@ -8,11 +8,10 @@ import { productsRef } from 'src/utils/refs'
 const Products = () => {
   return (
     <Box
-      maxW="1600px"
+      px={4}
       width="100%"
       backgroundColor="offwhite"
       paddingTop={[10, 10, 20]}
-      px={4}
       mx="auto"
       ref={productsRef}
     >
@@ -20,20 +19,22 @@ const Products = () => {
         as="h3"
         fontSize="30px"
         mb={8}
+        textAlign="center"
       >
         Available Products
       </Heading>
-      <Flex
+      <HStack
+        spacing={[0, 3, 4, 8]}
         direction={['column', 'row']}
         width="100%"
         align={['center', 'unset']}
-        justify="space-between"
+        justify="center"
         wrap="wrap"
       >
         {products.map((product) => (
           <ProductCard key={product.title} {...product} />
         ))}
-      </Flex>
+      </HStack>
     </Box>
   )
 }

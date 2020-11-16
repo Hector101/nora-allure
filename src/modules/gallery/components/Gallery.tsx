@@ -62,7 +62,7 @@ const Gallery = () => {
         </Flex>
         <Box width={[1, 1, 1 / 2]} alignSelf="flex-start">
           <Image
-            src="https://res.cloudinary.com/dqssxfxct/image/upload/v1604489710/WhatsApp_Image_2020-11-04_at_12.27.04_PM_m9jusy.jpg"
+            src="https://res.cloudinary.com/dqssxfxct/image/upload/v1519925929/test-blog-cover2_md9gli.jpg"
             objectFit="cover"
             ignoreFallback={true}
           />

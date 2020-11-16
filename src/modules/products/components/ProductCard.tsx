@@ -16,8 +16,9 @@ const ProductCard: React.FC<Product> = ({
       direction="column"
       justify="space-between"
       backgroundColor="white"
-      w={['100%', '48%', '48%', '24%']}
-      maxW={['540px', '100%']}
+      flexBasis={['100%', '48%', '48%', '30%']}
+      flexShrink={1}
+      maxW="450px"
       p={6}
       marginBottom={[4, 8, 10]}
     >

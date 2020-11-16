@@ -29,7 +29,7 @@ const HeroLeftSection = () => {
           pt="64px"
           w="100%"
           h="100%"
-          align="center"
+          align="flex-start"
           justify="center"
           direction="column"
         >

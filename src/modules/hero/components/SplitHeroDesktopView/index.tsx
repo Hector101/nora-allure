@@ -7,7 +7,7 @@ import HeroRightSection from './HeroRightSection'
 const SplitHeroDesktopView: FC<BoxProps> = ({ display }) => {
   return (
     <>
-      <Flex display={display}>
+      <Flex display={display} position="relative">
         <HeroLeftSection />
         <HeroRightSection />
       </Flex>

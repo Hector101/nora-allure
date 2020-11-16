@@ -17,6 +17,8 @@ const SplitHeroMobileView: FC<BoxProps> = ({ display }) => {
         pt="40%"
         position="relative"
         display={display}
+        maxW="2100px"
+        m="0 auto"
       >
         <Box
         position="absolute"

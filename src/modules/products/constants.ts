@@ -6,7 +6,12 @@ export type Product = {
 
 export const products: Product[] = [
   {
-    title: 'Men\s wear',
+    title: 'Women\'s wears',
+    image: 'https://res.cloudinary.com/dqssxfxct/image/upload/v1604489807/IMG-20201006-WA0007_jwhan2.jpg',
+    desc: 'Get all your exotic female clothing to suits your fasion needs.',
+  },
+  {
+    title: 'Men\'s wears',
     image: 'https://res.cloudinary.com/dqssxfxct/image/upload/v1604489746/20201018_133902_lkdf51.png',
     desc: 'Classy men office shirts - Plain/Stripped/Dotted/Printed patterns.',
   },
