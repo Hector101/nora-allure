@@ -1,4 +1,4 @@
-import { Flex, Box, Heading , HStack} from '@chakra-ui/core'
+import { Box, Heading , HStack} from '@chakra-ui/core'
 import React from 'react'
 
 import { products } from 'src/modules/products/constants'
@@ -11,7 +11,7 @@ const Products = () => {
       px={4}
       width="100%"
       backgroundColor="offwhite"
-      paddingTop={[10, 10, 20]}
+      paddingTop={20}
       mx="auto"
       ref={productsRef}
     >
